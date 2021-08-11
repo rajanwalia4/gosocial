@@ -1,6 +1,13 @@
 const express = require('express');
 const {db} = require('./db/models')
-const app = express();
+const {usersRoute} = require('./routes/users');
+
+const app = express()
+app.use(express.json())
+app.use(express.urlencoded({extended: true}));
+
+app.use('/api/users',usersRoute);
+
 
 app.get('/',(req,res)=>{
 	res.send("<h1>Hello</h1>");

@@ -33,7 +33,6 @@ const Users = db.define('user',{
 	username:COL_USERNAME_DEF,
 	password:{
 		type:DataTypes.STRING(50),
-		unique:true,
 		allowNull:false
 	}	
 })
@@ -63,7 +62,6 @@ Comments.belongsTo(Users)
 
 Posts.hasMany(Comments)
 Comments.belongsTo(Posts)
-
 
 
 module.exports = {
