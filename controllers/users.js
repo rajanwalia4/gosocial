@@ -1,5 +1,6 @@
 const {Users} = require('../db/models');
 
+// create new user
 async function createUser(name,username,password){
 	let user  = await Users.findOne({ where: { username } });
 	if(user)
@@ -15,8 +16,16 @@ async function createUser(name,username,password){
 	}
 }
 
+// find the user having given Id
+async function findUser(userId){
+	const user = await Users.findByPk(userId);
+	return user;
+}
+
+
 module.exports = {
-	createUser
+	createUser,
+	findUser
 }
 
 

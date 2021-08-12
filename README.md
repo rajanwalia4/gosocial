@@ -21,3 +21,16 @@ grant all privileges on gosocialdb.*  to gosocialuser;
 
 flush privileges;
 ```
+
+## API's
+
+- ``` Users ```
+	- [x]  ``` POST /api/users```  
+	- [x]  ``` GET  /api/users/{userID} ```
+	
+	
+- ``` Posts ```
+	- [x]  ``` POST /api/posts ```  
+	- [x]  ``` GET  /api/posts/ ```
+	- [x]  ``` GET  /api/posts/{postId} ```
+

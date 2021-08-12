@@ -1,9 +1,13 @@
 const {Router} = require('express');
-const {createUser} = require('../../controllers/users');
+const {createUser,findUser} = require('../../controllers/users');
 
 const router = Router();
-router.get('/',(req,res)=>{
-	res.send("Done");
+router.get('/:userId',async (req,res)=>{
+	const user = await findUser(req.params.userId);
+	if(user){
+		return res.status(200).json(user);
+	}
+	return res.status(404).json({error:"No such user exists"});
 })
 
 router.post('/',async (req,res)=>{
