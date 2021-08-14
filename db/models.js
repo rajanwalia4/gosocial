@@ -48,7 +48,6 @@ const Posts = db.define('post', {
 
 const Comments = db.define('comment', {
 	id: COL_ID_DEF,
-	title: COL_TITLE_DEF,
 	body: {
 		 type: DataTypes.TEXT('tiny')
 	}
