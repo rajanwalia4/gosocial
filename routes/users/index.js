@@ -14,15 +14,15 @@ router.get('/:userId',async (req,res)=>{
 
 // create User
 router.post('/',async (req,res)=>{
-	let username = req.body.username;
+	let email = req.body.email;
 	let name = req.body.name;
 	let password = req.body.password;
-	if(username && name && password){
-		const user = await createUser(name,username,password);
+	if(email && name && password){
+		const user = await createUser(name,email,password);
 		if(user)
 			return res.status(201).send(user);
 		else
-			return res.status(404).json({error : "username is not Available"})
+			return res.status(404).json({error : "email is not Available"})
 	}
 	return res.status(404).json({error : "name attributes have wrong name"});
 });

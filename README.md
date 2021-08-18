@@ -34,3 +34,8 @@ flush privileges;
 	- [x]  ``` GET  /api/posts/ ```
 	- [x]  ``` GET  /api/posts/{postId} ```
 
+``` Comments ```
+	- [x]  ``` POST /api/comments ```  
+	- [x]  ``` GET  /api/comments/{postId} ```
+	
+

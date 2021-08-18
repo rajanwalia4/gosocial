@@ -20,7 +20,7 @@ async function findPost(postId){
 async function findAllPosts(query) {
 	
 	const posts = await Posts.findAll({
-	  include: [ Users ]
+	  include: [{ model: Users, attributes:{ exclude:['password']} }] // including users without passwords
 	})
  
 	return posts

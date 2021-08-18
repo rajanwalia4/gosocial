@@ -9,12 +9,7 @@ const db = new Sequelize({
 const COL_ID_DEF = {
 	type:DataTypes.INTEGER,
 	autoIncrement:true,
-	primaryKey:true
-}
-
-const COL_USERNAME_DEF = {
-	type:DataTypes.STRING(30),
-	unique:true,
+	primaryKey:true,
 	allowNull:false
 }
 
@@ -30,7 +25,11 @@ const Users = db.define('user',{
 		type:DataTypes.STRING(50),
 		allowNull:false
 	},	
-	username:COL_USERNAME_DEF,
+	email:{
+		type:DataTypes.STRING(100),
+		unique:true,
+		allowNull:false
+	},
 	password:{
 		type:DataTypes.STRING(50),
 		allowNull:false

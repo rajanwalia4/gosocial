@@ -1,14 +1,14 @@
 const {Users} = require('../db/models');
 
 // create new user
-async function createUser(name,username,password){
-	let user  = await Users.findOne({ where: { username } });
+async function createUser(name,email,password){
+	let user  = await Users.findOne({ where: { email } });
 	if(user)
 			return null;
 	else{
 		const newUser  = await Users.create({
 			name,
-			username,
+			email,
 			password
 		});
 		
@@ -16,8 +16,13 @@ async function createUser(name,username,password){
 	}
 }
 
-// find the user having given Id
+// find the user without password having given Id
 async function findUser(userId){
+	const user = await Users.findByPk(userId,{attributes: {exclude: ['password']}});
+	return user;
+}
+
+async function findUserWithPassword(userId){
 	const user = await Users.findByPk(userId);
 	return user;
 }
@@ -25,7 +30,8 @@ async function findUser(userId){
 
 module.exports = {
 	createUser,
-	findUser
+	findUser,
+	findUserWithPassword
 }
 
 
