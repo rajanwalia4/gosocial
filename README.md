@@ -3,7 +3,7 @@
 ## Installations
 
 ```
-npm install express ejs sequelize
+npm install express ejs express-ejs-layouts express-session sequelize
 ```
 
 ## Database Setup

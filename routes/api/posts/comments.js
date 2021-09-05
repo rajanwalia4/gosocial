@@ -1,8 +1,8 @@
 const {Router} = require('express');
 const router = Router();
-const {createComment,findComments} = require('../../controllers/comments');
-const {findUser} = require('../../controllers/users');
-const {findPost} = require('../../controllers/posts');
+const {createComment,findComments} = require('../../../controllers/comments');
+const {findUser} = require('../../../controllers/users');
+const {findPost} = require('../../../controllers/posts');
 
 // create comment Route
 router.post('/',async (req,res)=>{

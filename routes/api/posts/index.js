@@ -2,8 +2,8 @@ const {Router} = require('express');
 const {createPost,
 	 findAllPosts,
 	 findPost,
-	} = require('../../controllers/posts');
-const {findUser} = require('../../controllers/users');
+	} = require('../../../controllers/posts');
+const {findUser} = require('../../../controllers/users');
 const router = Router();
 
 
